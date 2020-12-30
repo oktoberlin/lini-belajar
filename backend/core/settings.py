@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'djoser',
     #
     'apps.accounts',
+    'apps.notes',
     #
     'corsheaders'
 ]
