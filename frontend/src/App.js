@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Root from "./Root";
+import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Signup from "./components/signup/Signup";
 import Login from "./components/login/Login";
@@ -7,7 +8,7 @@ import NotFound from "./components/NotFound"
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <Root>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={Signup} />
@@ -15,7 +16,7 @@ function App() {
             <Route path="/dashboard" component={Dashboard} />
             <Route path='*' component={NotFound} />
           </Switch>
-      </BrowserRouter>
+      </Root>
     </div>
   );
 }
