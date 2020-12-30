@@ -5,10 +5,15 @@ import Signup from "./components/signup/Signup";
 import Login from "./components/login/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 import NotFound from "./components/NotFound"
+import { ToastContainer } from "react-toastify";
+import axios from "axios";
+axios.defaults.baseURL = "http://127.0.0.1:8000";
+
 function App() {
   return (
     <div>
       <Root>
+      <ToastContainer hideProgressBar={true} newestOnTop={true} />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={Signup} />
