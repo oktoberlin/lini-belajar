@@ -7,6 +7,8 @@ import Dashboard from "./components/dashboard/Dashboard";
 import NotFound from "./components/NotFound"
 import { ToastContainer } from "react-toastify";
 import axios from "axios";
+import requireAuth from "./utils/RequireAuth";
+
 axios.defaults.baseURL = "http://127.0.0.1:8000";
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
-            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/dashboard" component={requireAuth(Dashboard)} />
             <Route path='*' component={NotFound} />
           </Switch>
       </Root>
