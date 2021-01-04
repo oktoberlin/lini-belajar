@@ -1,14 +1,14 @@
-FROM python:3.8.3-alpine
+FROM python:3
 
-WORKDIR /app
-ADD ./backend/requirements.txt /app/backend/
+WORKDIR /usr/src/app
+COPY ./backend/requirements.txt ./
+RUN pip uninstall django
+RUN pip install -r requirements.txt
 
 RUN pip install --upgrade pip
 RUN pip install gunicorn
 RUN pip install -r backend/requirements.txt
-RUN chmod +x docker/backend/wsgi-entrypoint.sh
 
-ADD ./docker /app/docker
-ADD ./backend /app/backend
-
+COPY ./docker /app/docker
+COPY ./backend /app/backend
 

@@ -17,7 +17,7 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     return (
       <div>
-        <Navbar bg="light">
+        <Navbar bg="">
           <Navbar.Brand href="/">Home</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
